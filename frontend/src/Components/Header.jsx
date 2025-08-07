@@ -6,6 +6,8 @@ import menuIcon from './menu.png';
 import cartIcon from './cart.png';
 import userIcon from './profile.avif';
 import userPhoto from './user.png'; // Replace with your profile image
+import './Home.css';
+
 
 const Header = () => {
   const [showPopup, setShowPopup] = useState(false);

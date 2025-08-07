@@ -5,6 +5,7 @@ import Login from './Components/Login';
 import Otp from './Components/Otp';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Home from './Components/Home'
 import { useEffect } from 'react';
 
 function AppWrapper() {
@@ -19,7 +20,7 @@ function AppWrapper() {
   return (
     <>
       {!shouldHideHeaderFooter && <Header />}
-
+      <Home/>
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/register" element={<Register />} />
