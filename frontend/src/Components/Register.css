@@ -1,0 +1,80 @@
+/* Register.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #fff6cc, #ffd4b2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.register-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-title {
+  text-align: center;
+  color: #e63946;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.register-form .form-group {
+  margin-bottom: 15px;
+}
+
+.register-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.register-form input,
+.register-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ffcc80;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e63946;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #d62828;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-box {
+    padding: 20px;
+  }
+
+  .register-title {
+    font-size: 20px;
+  }
+}

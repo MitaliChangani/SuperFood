@@ -1,0 +1,222 @@
+/* ----------------------------------------
+   HEADER STYLES
+------------------------------------------- */
+
+/* Header Container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #fff8e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: nowrap; /* keep everything in one line */
+  overflow-x: auto;   /* allow horizontal scroll on very small screens */
+}
+
+/* Logo on the Left */
+.logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Center Icons */
+.header-center {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.nav-icon {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Right Profile Icon */
+.user-icon {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ----------------------------------------
+   RESPONSIVE DESIGN
+------------------------------------------- */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 12px;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  .nav-icon,
+  .user-icon {
+    height: 28px;
+    width: 28px;
+  }
+
+  .header-center {
+    gap: 16px;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 40px;
+  }
+
+  .nav-icon,
+  .user-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .header-center {
+    gap: 12px;
+  }
+}
+
+/* ----------------------------------------
+   PROFILE POPUP STYLES
+------------------------------------------- */
+
+.profile-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #fcedea;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4b2e26;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #4b2e26;
+  cursor: pointer;
+}
+
+/* Avatar Circle */
+.circle-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 10px 0;
+}
+
+.circle-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px double #fff1ec;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* User Info */
+.user-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4b2e26;
+  margin-top: 8px;
+}
+
+.user-phone {
+  font-size: 14px;
+  color: #6e4f45;
+  margin-top: 4px;
+}
+
+/* Popup Menu Options */
+.popup-option {
+  background-color: #f0e1dc;
+  color: #4b2e26;
+  margin: 8px 0;
+  padding: 12px 18px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Logout Button */
+.logout-btn {
+  margin-top: 24px;
+  background-color: #4b2e26;
+  color: #fff;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #3a2018;
+}
+
+/* Responsive popup width for smaller screens */
+@media (max-width: 400px) {
+  .profile-popup {
+    width: 100%;
+  }
+}

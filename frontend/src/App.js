@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Welcome from './Components/Welcome';
+import Register from './Components/Register';
+import Login from './Components/Login';
+import Otp from './Components/Otp';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import { useEffect } from 'react';
+
+function AppWrapper() {
+  const location = useLocation();
+
+  // Define routes where Header/Footer should not appear
+  const hideOnRoutes = ['/', '/register', '/login','/otp'];
+
+  // Check if the current path is one of those
+  const shouldHideHeaderFooter = hideOnRoutes.includes(location.pathname.toLowerCase());
+
+  return (
+    <>
+      {!shouldHideHeaderFooter && <Header />}
+
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/otp" element={<Otp />} />
+      </Routes>
+
+      {!shouldHideHeaderFooter && <Footer />}
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppWrapper />
+    </Router>
   );
 }
 
