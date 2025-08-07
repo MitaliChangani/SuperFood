@@ -21,3 +21,11 @@ class OrderSerializer(serializers.ModelSerializer):
             'delivery_status',
             'items',
         ]
+
+from rest_framework import serializers
+from .models import CustomUser
+
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['id', 'name', 'phone_number', 'address']
