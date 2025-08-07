@@ -1,5 +1,6 @@
 import random
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
 import requests
 from .models import OTP, CustomUser
 from django.views.decorators.csrf import csrf_exempt
@@ -59,6 +60,28 @@ def register_user(request):
             return JsonResponse({'error': 'User already exists'}, status=400)
 
         return JsonResponse({'message': 'User registered successfully'})
+    
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .models import CustomUser
+from .serializers import CustomUserSerializer
+
+@api_view(['POST'])
+def login_view(request):
+    name = request.data.get('name')
+    phone_number = request.data.get('phone_number')
+
+    if not name or not phone_number:
+        return Response({'error': 'Name and phone number are required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        user = CustomUser.objects.get(name=name, phone_number=phone_number)
+        serializer = CustomUserSerializer(user)
+        return Response({'message': 'Login successful', 'user': serializer.data}, status=status.HTTP_200_OK)
+    except CustomUser.DoesNotExist:
+        return Response({'error': 'User not found. Please register first.'}, status=status.HTTP_404_NOT_FOUND)
+
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
