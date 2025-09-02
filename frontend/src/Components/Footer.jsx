@@ -1,8 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-import logo from './logo.png'; // Replace with actual logo path
-
+import logo from './logo.png'; 
 const Footer = () => {
   return (
     <footer className="superfood-footer">

@@ -1,0 +1,134 @@
+/* Chinese.css */
+
+.chinese-container {
+  padding: 20px;
+  background: white;
+  min-height: 100vh;
+}
+
+.chinese-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.chinese-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.chinese-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.chinese-card:hover {
+  transform: scale(1.05);
+}
+
+.chinese-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.chinese-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.chinese-item-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.chinese-item-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.chinese-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.chinese-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #b34700;
+}
+
+.chinese-add-btn {
+  background: #b34700;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chinese-add-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .chinese-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .chinese-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .chinese-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chinese-image {
+    height: 180px;
+  }
+
+  .chinese-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .chinese-add-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .chinese-item-name {
+    font-size: 1rem;
+  }
+
+  .chinese-item-desc {
+    font-size: 0.85rem;
+  }
+}

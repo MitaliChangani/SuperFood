@@ -15,7 +15,6 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!name || !phoneNumber || !address) {
       setError('Please fill all fields');
       setSuccess('');
@@ -53,32 +52,17 @@ const Register = () => {
         <form className="register-form" onSubmit={handleRegister}>
           <div className="form-group">
             <label>Name</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+            <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
 
           <div className="form-group">
             <label>Phone Number</label>
-            <input
-              type="tel"
-              placeholder="Enter your phone number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
+            <input type="tel" placeholder="Enter your phone number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
           </div>
 
           <div className="form-group">
             <label>Address</label>
-            <textarea
-              placeholder="Enter your address"
-              rows="3"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            ></textarea>
+            <textarea placeholder="Enter your address" rows="3" value={address} onChange={(e) => setAddress(e.target.value)}></textarea>
           </div>
 
           {error && <div className="error-message">{error}</div>}

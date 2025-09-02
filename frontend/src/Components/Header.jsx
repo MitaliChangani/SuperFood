@@ -5,12 +5,13 @@ import homeIcon from './home.png';
 import menuIcon from './menu.png';
 import cartIcon from './cart.png';
 import userIcon from './profile.avif';
-import userPhoto from './user.png'; // Replace with your profile image
+import userPhoto from './user.png';
 import './Home.css';
-
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
@@ -24,7 +25,12 @@ const Header = () => {
         </div>
 
         <div className="header-center">
-          <img src={homeIcon} alt="Home" className="nav-icon" />
+          <img
+            src={homeIcon}
+            alt="Home"
+            className="nav-icon"
+            onClick={() => navigate('/home')}   
+          />
           <img src={menuIcon} alt="Menu" className="nav-icon" />
           <img src={cartIcon} alt="Cart" className="nav-icon" />
         </div>
@@ -53,7 +59,6 @@ const Header = () => {
             ></div>
           </div>
 
-          {/* User Name and Phone */}
           <div className="user-info">
             <div className="user-name">John Doe</div>
             <div className="user-phone">+91 1234567890</div>

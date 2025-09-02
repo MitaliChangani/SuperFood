@@ -86,7 +86,6 @@
   background-color: #d35400;
 }
 
-/* Bottom Section */
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #e0d2c2;
@@ -96,7 +95,6 @@
   color: #6e4f45;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .footer-top {
     flex-direction: column;

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './Welcome.css';
 import backgroundImage from './image.png';
 
-
 const Welcome = () => {
   const navigate = useNavigate();
 

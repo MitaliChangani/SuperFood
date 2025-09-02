@@ -1,0 +1,107 @@
+.mexican-container {
+  padding: 20px;
+  background: white;
+  min-height: 100vh;
+}
+
+.mexican-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.mexican-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.mexican-card {
+  background: #fff0e6;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.mexican-card:hover {
+  transform: scale(1.05);
+}
+
+.mexican-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.mexican-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.mexican-item-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.mexican-item-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.mexican-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.mexican-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.mexican-add-btn {
+  background: #8B0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mexican-add-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .mexican-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mexican-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .mexican-grid {
+    grid-template-columns: 1fr;
+  }
+}

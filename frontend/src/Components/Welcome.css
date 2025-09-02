@@ -1,5 +1,3 @@
-/* Welcome.css */
-
 .welcome-container {
   position: relative;
   width: 100vw;
@@ -13,8 +11,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ensures the image covers the container */
-  z-index: -1; /* sends image behind the text */
+  object-fit: cover; 
+  z-index: -1; 
 }
 
 .welcome-content {
@@ -37,8 +35,6 @@
   font-size: 30px;
   font-family: 'Times New Roman', Times, serif;
 }
-
-/* Welcome.css */
 
 .get-started-button {
   background-color: rgb(4, 133, 254);

@@ -1,0 +1,132 @@
+.japanese-container {
+  padding: 20px;
+  background: white;
+  min-height: 100vh;
+}
+
+.japanese-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.japanese-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.japanese-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.japanese-card:hover {
+  transform: scale(1.05);
+}
+
+.japanese-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.japanese-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.japanese-item-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.japanese-item-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.japanese-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.japanese-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #b34700;
+}
+
+.japanese-add-btn {
+  background: #b34700;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.japanese-add-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .japanese-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .japanese-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .japanese-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .japanese-image {
+    height: 180px;
+  }
+
+  .japanese-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .japanese-add-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .japanese-item-name {
+    font-size: 1rem;
+  }
+
+  .japanese-item-desc {
+    font-size: 0.85rem;
+  }
+}

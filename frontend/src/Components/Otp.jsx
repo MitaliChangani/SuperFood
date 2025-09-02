@@ -10,12 +10,11 @@ const Otp = () => {
   const navigate = useNavigate();
 
   const handleChange = (index, value) => {
-    if (!/^\d?$/.test(value)) return; // Allow only digits
+    if (!/^\d?$/.test(value)) return;
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // Auto-focus next input
     if (value && index < 3) {
       const nextInput = document.getElementById(`otp-${index + 1}`);
       if (nextInput) nextInput.focus();
@@ -43,7 +42,7 @@ const Otp = () => {
         setSuccess('✅ OTP Verified!');
         setError('');
         setTimeout(() => {
-          navigate('/'); // Navigate to home after success
+          navigate('/');
         }, 1500);
       }
     } catch (err) {
